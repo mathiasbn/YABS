@@ -2,7 +2,7 @@
 ### Node template
 # Logs
 logs
-*.log
+pipeline-presenter/npm-debug.log
 
 # Runtime data
 pids

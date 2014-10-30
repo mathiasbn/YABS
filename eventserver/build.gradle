@@ -1,0 +1,3 @@
+dependencies {
+    compile 'org.scalatra.socketio-java:socketio-core:2.0.0'
+}
