@@ -1,3 +1,18 @@
+task npmInstall(type: Exec) {
+    group = "Build"
+    description = "Installs all Node.js dependencies defined in package.json"
+    commandLine = ["npm", "install"]
+    inputs.file "package.json"
+    outputs.dir "node_modules"
+}
+//task npmInstall(type: Exec) {
+//    group = "Build"
+//    description = "Installs all Node.js dependencies defined in package.json"
+//    commandLine = ["npm", "install"]
+//    inputs.file "package.json"
+//    outputs.dir "node_modules"
+//}
+
 dependencies {
     dependencies {
         compile 'org.eclipse.jetty:jetty-server:9.3.0.M0'
