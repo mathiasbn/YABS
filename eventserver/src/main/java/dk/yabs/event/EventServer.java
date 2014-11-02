@@ -16,6 +16,7 @@ public class EventServer {
         server.addEventListener("buildevent", String.class, new DataListener<String>() {
             @Override
             public void onData(SocketIOClient client, String data, AckRequest ackRequest) {
+                System.out.println(String.format("Sending: %s", data));
                 server.getBroadcastOperations().sendEvent("buildevent", data);
             }
         });
