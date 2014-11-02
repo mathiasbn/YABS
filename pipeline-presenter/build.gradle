@@ -15,4 +15,4 @@ buildscript {
     }
 }
 
-build.dependsOn('npmInstall')
+assemble.dependsOn('npmInstall')
