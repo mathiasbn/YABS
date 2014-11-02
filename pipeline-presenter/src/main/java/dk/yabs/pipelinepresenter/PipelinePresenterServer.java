@@ -1,3 +1,5 @@
+package dk.yabs.pipelinepresenter;
+
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.DefaultHandler;
@@ -9,7 +11,7 @@ public class PipelinePresenterServer {
         new PipelinePresenterServer().start();
     }
 
-    private void start() throws Exception {
+    public void start() throws Exception {
         Server server = new Server(8010);
 
         ResourceHandler resource_handler = new ResourceHandler();
