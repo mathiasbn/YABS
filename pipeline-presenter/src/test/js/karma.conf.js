@@ -7,6 +7,8 @@ module.exports = function(config){
       '../main/resources/app/bower_components/angular/angular.js',
       '../main/resources/app/bower_components/angular-route/angular-route.js',
       '../main/resources/app/bower_components/angular-mocks/angular-mocks.js',
+      '../main/resources/app/bower_components/socket.io-client/socket.io.js',
+      '../main/resources/app/bower_components/angular-socket-io/socket.js',
       '../main/resources/app/js/**/*.js',
       'js/unit/**/*.js'
     ],
