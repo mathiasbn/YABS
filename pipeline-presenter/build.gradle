@@ -1,18 +1,17 @@
-apply plugin: 'com.moowork.node'
-
+plugins {
+  id "com.moowork.node" version "0.6"
+}
 dependencies {
     dependencies {
         compile 'org.eclipse.jetty:jetty-server:9.3.0.M0'
     }
 }
 
-buildscript {
-    repositories {
-        jcenter()
-    }
-    dependencies {
-        classpath 'com.moowork.gradle:gradle-node-plugin:0.6'
-    }
+node {
+    version = '0.11.10'
+    distBaseUrl = 'http://nodejs.org/dist'
+    workDir = file("${project.buildDir}/nodejs")
+    download = true
 }
 
-assemble.dependsOn('npmInstall')
+processResources.dependsOn('npmInstall')

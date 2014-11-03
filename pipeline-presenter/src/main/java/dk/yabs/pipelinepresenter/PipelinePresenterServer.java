@@ -14,13 +14,13 @@ public class PipelinePresenterServer {
     public void start() throws Exception {
         Server server = new Server(8010);
 
-        ResourceHandler resource_handler = new ResourceHandler();
-        resource_handler.setWelcomeFiles(new String[]{"index.html"});
+        ResourceHandler resourceHandler = new ResourceHandler();
+        resourceHandler.setWelcomeFiles(new String[]{"index.html"});
 
-        resource_handler.setResourceBase("pipeline-presenter/src/main/resources/app/");
+        resourceHandler.setResourceBase("pipeline-presenter/src/main/resources/app/");
 
         HandlerList handlers = new HandlerList();
-        handlers.setHandlers(new Handler[]{resource_handler, new DefaultHandler()});
+        handlers.setHandlers(new Handler[]{resourceHandler, new DefaultHandler()});
         server.setHandler(handlers);
         server.start();
     }
