@@ -1,1 +1,1 @@
-include 'main','buildserver','pipeline-presenter','eventserver'
+include 'main','buildserver','pipeline-presenter','eventserver','pipeline-dsl'
