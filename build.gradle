@@ -3,6 +3,7 @@ subprojects {
 }
 
 allprojects {
+    apply plugin: 'idea'
     repositories {
         mavenCentral()
     }

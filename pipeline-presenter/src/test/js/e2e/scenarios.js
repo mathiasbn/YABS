@@ -14,7 +14,5 @@ describe('Pipeline App', function() {
       var header = element(by.binding('moinz')).getText();
       expect(header).toBe('MOINZ FROM ANGULAR!!!');
     });
-
-
   });
 });

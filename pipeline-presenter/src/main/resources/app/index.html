@@ -1,5 +1,7 @@
 <html ng-app="nodeApp">
 <head>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+    <script src="bower_components/bootstrap/dist/css/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/socket.io-client/socket.io.js"></script>
     <script src="js/controllers.js"></script>
@@ -7,14 +9,60 @@
 </head>
 <body ng-controller="MainController">
 <h1>{{moinz}}</h1>
-<button ng-click="emitFunction()">Emit</button>
+<ul class="nav nav-pills nav" role="tablist">
+    <li role="presentation" class="active"><a href="#">Configuration (not much Per)</a></li>
+    <li role="presentation"><a href="#">Master<span class="badge">42</span></a></li>
+    <li role="presentation"><a href="#">Branch</a></li>
+    <li role="presentation"><a href="#">Yet another branch</a></li>
+    <li role="presentation"><a href="#">And then the special case branch</a></li>
+    <li role="presentation"><a href="#">Branch pipeline</a></li>
+    <li role="presentation"><a href="#">Branch pipeline</a></li>
+</ul>
+<div class="pipeline container">
+    <div class="pipeline-run row">
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">Build and unittest</div>
+                <div class="panel-body">
+                    Some complex build data
+                    <ul>
+                        <li>Like unordered list</li>
+                    </ul>
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45"
+                             aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                            45% Complete
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">Integrationtest</div>
+                <div class="panel-body">
+                    Some complex build data
+                    <div class="progress">
+                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
+                             aria-valuenow="80"
+                             aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                            80% Complete (danger)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <table>
-    <tr >
+    <tr>
         <td ng-repeat="emit in emitted">{{emit}}</td>
     </tr>
     <tr>
         <td ng-repeat="emit2 in emits">{{emit2}}</td>
     </tr>
 </table>
-    </body>
+<button ng-click="emitFunction()">Emit</button>
+</body>
 </html>
