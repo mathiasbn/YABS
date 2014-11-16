@@ -1,54 +1,91 @@
 <html ng-app="nodeApp">
 <head>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
-    <script src="bower_components/bootstrap/dist/css/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/main.css"/>
+    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/socket.io-client/socket.io.js"></script>
     <script src="js/controllers.js"></script>
     <script src="bower_components/angular-socket-io/socket.js"></script>
 </head>
 <body ng-controller="MainController">
-<h1>{{moinz}}</h1>
-<ul class="nav nav-pills nav" role="tablist">
-    <li role="presentation" class="active"><a href="#">Configuration (not much Per)</a></li>
-    <li role="presentation"><a href="#">Master<span class="badge">42</span></a></li>
-    <li role="presentation"><a href="#">Branch</a></li>
-    <li role="presentation"><a href="#">Yet another branch</a></li>
-    <li role="presentation"><a href="#">And then the special case branch</a></li>
-    <li role="presentation"><a href="#">Branch pipeline</a></li>
-    <li role="presentation"><a href="#">Branch pipeline</a></li>
-</ul>
-<div class="pipeline container">
-    <div class="pipeline-run row">
-        <div class="col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-heading">Build and unittest</div>
-                <div class="panel-body">
-                    Some complex build data
-                    <ul>
-                        <li>Like unordered list</li>
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">YABS</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li ng-class="{active:isTabSelected(pipeline.name)}" ng-repeat="pipeline in pipelines">
+                    <a href="#" ng-click="setTab(pipeline.name)">{{pipeline.name}}<span class="badge">42</span></a></li>
+
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Dropdown
+                        <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
                     </ul>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45"
-                             aria-valuemin="0" aria-valuemax="100" style="width: 45%">
-                            45% Complete
+                </li>
+            </ul>
+
+            <ul class="nav navbar-nav navbar-right">
+                <li ng-class="{active:isTabSelected(config)}">
+                    <a href="#" ng-click="setTab(config)">Configuration</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<div ng-show="!isTabSelected(config)" class="pipeline container" style="padding-top:70px">
+    <div class="pipeline-run row " ng-init="buildIndex = $index" ng-repeat="build in currentPipeline.pipelineBuilds | orderBy:'buildNr':true"
+         style="">
+
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+
+            <div class="col-md-1">
+                <div class="panel panel-default">
+                    <div class="panel-heading">{{build.buildNr}}</div>
+                </div>
+            </div>
+            <div class="col-md-2" ng-repeat="step in build.steps">
+                <div class="panel"
+                     ng-class="{'panel-success':isSuccess(step), 'panel-warning':isNotAccepted(step), 'panel-danger':isFailed(step), 'panel-info':isActive(step), 'panel-default':isPending(step)}">
+                    <div class="panel-heading"><a class="collapsed" data-toggle="collapse" data-parent="#accordion"
+                                                  href="#additionalInfoPanel-{{buildIndex}}"
+                                                  aria-expanded="false"
+                                                  aria-controls="additionalInfoPanel-{{buildIndex}}">
+                        {{step.stepName}}
+                    </a></div>
+                    <div class="panel-body">
+                        Build overview
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="45"
+                                 aria-valuemin="0" aria-valuemax="100" style="width: 45%">
+                                45% Complete
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-heading">Integrationtest</div>
+
+            <div id="additionalInfoPanel-{{$index}}" class="panel-collapse collapse col-md-12" role="tabpanel"
+                 aria-labelledby="headingTwo">
                 <div class="panel-body">
-                    Some complex build data
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar"
-                             aria-valuenow="80"
-                             aria-valuemin="0" aria-valuemax="100" style="width: 80%">
-                            80% Complete (danger)
-                        </div>
-                    </div>
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                    3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                    laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                    coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                    anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                    occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+                    of them accusamus labore sustainable VHS.
                 </div>
             </div>
         </div>

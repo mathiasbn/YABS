@@ -1,0 +1,183 @@
+{
+  "pipelines": [
+    {
+      "name": "master",
+      "pipelineBuilds": [
+        {
+          "buildNr": 1,
+          "steps": [
+            {
+              "stepName": "Build/Unittest"
+            },
+            {
+              "stepName": "Integrationtest"
+            }
+          ]
+        },
+        {
+          "buildNr": 2,
+          "steps": [
+            {
+              "stepName": "Build/Unittest"
+            },
+            {
+              "stepName": "Integrationtest"
+            }
+          ]
+        },
+        {
+          "buildNr": 3,
+          "steps": [
+            {
+              "stepName": "Build/Unittest",
+              "status": "success"
+            },
+            {
+              "stepName": "Integrationtest"
+            }
+          ]
+        },
+        {
+          "buildNr": 4,
+          "steps": [
+            {
+              "stepName": "Build/Unittest",
+              "status": "success"
+            },
+            {
+              "stepName": "Integrationtest"
+            }
+          ]
+        },
+        {
+          "buildNr": 5,
+          "steps": [
+            {
+              "stepName": "Build/Unittest"
+            },
+            {
+              "stepName": "Integrationtest"
+            }
+          ]
+        },
+        {
+          "buildNr": 6,
+          "steps": [
+            {
+              "stepName": "Build/Unittest",
+              "status": "success"
+            },
+            {
+              "stepName": "Integrationtest",
+              "status": "failed"
+            }
+          ]
+        },
+        {
+          "buildNr": 7,
+          "steps": [
+            {
+              "stepName": "Build/Unittest",
+              "status": "success"
+            },
+            {
+              "stepName": "Integrationtest"
+            }
+          ]
+        },
+        {
+          "buildNr": 8,
+          "steps": [
+            {
+              "stepName": "Build/Unittest",
+              "status": "success"
+            },
+            {
+              "stepName": "Integrationtest",
+              "status": "failed"
+            }
+          ]
+        },
+        {
+          "buildNr": 9,
+          "steps": [
+            {
+              "stepName": "Build/Unittest",
+              "status": "success"
+            },
+            {
+              "stepName": "Integrationtest",
+              "status": "notAccepted"
+            }
+          ]
+        },
+        {
+          "buildNr": 10,
+          "steps": [
+            {
+              "stepName": "Build/Unittest",
+              "status": "success"
+            },
+            {
+              "stepName": "Integrationtest",
+              "status": "active"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2014.1",
+      "pipelineBuilds": [
+        {
+          "buildNr": 1,
+          "steps": [
+            {
+              "stepName": "Build/Unittest"
+            },
+            {
+              "stepName": "Integrationtest"
+            },
+            {
+              "stepName": "End to end"
+            },
+            {
+              "stepName": "Performance test"
+            },
+            {
+              "stepName": "Manual exploratory testing"
+            },
+            {
+              "stepName": "Release"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "2014.0.1",
+      "pipelineBuilds": [
+      ]
+    },
+    {
+      "name": "2014.0",
+      "pipelineBuilds": [
+      ]
+    },
+    {
+      "name": "2013.3.12",
+      "pipelineBuilds": [
+      ]
+    },
+    {
+      "name": "2013.3.11",
+      "pipelineBuilds": [
+      ]
+    },
+    {
+      "name": "2013.3.10",
+      "pipelineBuilds": [
+      ]
+    }
+  ]
+}
