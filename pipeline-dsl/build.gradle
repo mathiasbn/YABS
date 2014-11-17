@@ -1,2 +1,2 @@
-apply plugin: 'groovy'
 apply from: '../groovy.gradle'
+apply plugin: 'groovy'
