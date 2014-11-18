@@ -7,9 +7,11 @@
           "buildNr": 1,
           "steps": [
             {
+              "stepNr": 1,
               "stepName": "Build/Unittest"
             },
             {
+              "stepNr": 2,
               "stepName": "Integrationtest"
             }
           ]
@@ -18,9 +20,11 @@
           "buildNr": 2,
           "steps": [
             {
+              "stepNr": 1,
               "stepName": "Build/Unittest"
             },
             {
+              "stepNr": 2,
               "stepName": "Integrationtest"
             }
           ]
@@ -29,10 +33,12 @@
           "buildNr": 3,
           "steps": [
             {
+              "stepNr": 1,
               "stepName": "Build/Unittest",
               "status": "success"
             },
             {
+              "stepNr": 2,
               "stepName": "Integrationtest"
             }
           ]
@@ -41,10 +47,12 @@
           "buildNr": 4,
           "steps": [
             {
+              "stepNr": 1,
               "stepName": "Build/Unittest",
               "status": "success"
             },
             {
+              "stepNr": 2,
               "stepName": "Integrationtest"
             }
           ]
@@ -53,9 +61,11 @@
           "buildNr": 5,
           "steps": [
             {
+              "stepNr": 1,
               "stepName": "Build/Unittest"
             },
             {
+              "stepNr": 2,
               "stepName": "Integrationtest"
             }
           ]
@@ -64,10 +74,12 @@
           "buildNr": 6,
           "steps": [
             {
+              "stepNr": 1,
               "stepName": "Build/Unittest",
               "status": "success"
             },
             {
+              "stepNr": 2,
               "stepName": "Integrationtest",
               "status": "failed"
             }
@@ -77,10 +89,12 @@
           "buildNr": 7,
           "steps": [
             {
+              "stepNr": 1,
               "stepName": "Build/Unittest",
               "status": "success"
             },
             {
+              "stepNr": 2,
               "stepName": "Integrationtest"
             }
           ]
@@ -89,12 +103,15 @@
           "buildNr": 8,
           "steps": [
             {
+              "stepNr": 1,
               "stepName": "Build/Unittest",
               "status": "success"
             },
             {
+              "stepNr": 2,
               "stepName": "Integrationtest",
-              "status": "failed"
+              "status": "failed",
+              "stacktrace": "2014-04-11 11:24:25,956 [AWT-EventQueue-1] ERROR dk.capgemini.guiutils.client.gui.GuiUtils - null\n dk.capgemini.bookline.client.gui.smartbook.toolbar.breve.BrevServiceFacade$ReceiversNotLoaded\n at dk.capgemini.bookline.client.gui.brevfletning.ModtagereHelper.getBiBrevModtagers(ModtagereHelper.java:36)\n at dk.capgemini.bookline.client.gui.brevfletning.ModtagereHelper.loadModtagereWithoutErrorDialog(ModtagereHelper.java:22)\n at dk.capgemini.bookline.client.gui.smartbook.toolbar.breve.BrevServiceFacade.getReceivers(BrevServiceFacade.java:18)\n at dk.capgemini.bookline.client.gui.smartbook.toolbar.breve.BrevController.setReceivers(BrevController.java:141)\n at dk.capgemini.bookline.client.gui.smartbook.toolbar.breve.BrevController.<init>(BrevController.java:23)\n at dk.capgemini.bookline.client.gui.smartbook.toolbar.breve.BrevMvcFactory.create(BrevMvcFactory.java:22)\n at dk.capgemini.bookline.client.gui.smartbook.SmartBookMainGA.initPresentation(SmartBookMainGA.java:380)\n at dk.capgemini.guiutils.client.gui.guiagent.AbstractGA.init(AbstractGA.java:178)\n at dk.capgemini.bookline.client.gui.smartbook.SmartBookMainGA.init(SmartBookMainGA.java:759)\n at dk.capgemini.guiutils.client.gui.guiagent.DialogGA.init(DialogGA.java:202)\n at dk.capgemini.bookline.client.gui.smartbook.SmartBookMainGA.showAsDialog(SmartBookMainGA.java:907)\n at dk.capgemini.bookline.client.gui.smartbook.SmartBookMainGA.showAsDialog(SmartBookMainGA.java:863)\n at dk.capgemini.bookline.client.gui.anmodning.AnmodningHelper.showBookingAnmodningDialog(AnmodningHelper.java:259)\n at dk.capgemini.bookline.client.gui.anmodning.AnmodningHelper.opretNyAnmodning(AnmodningHelper.java:154)\n at dk.capgemini.bookline.client.gui.anmodning.AnmodningHelper.opretNyAnmodning(AnmodningHelper.java:116)\n at dk.capgemini.bookline.client.gui.anmodning.AnmodningHelper.opretNyAnmodning(AnmodningHelper.java:89)\n at dk.capgemini.bookline.client.gui.explorer.AnmodningAlleTreeNode.doOpret(AnmodningAlleTreeNode.java:210)\n at dk.capgemini.bookline.client.gui.explorer.AnmodningAlleTreeNode.access$000(AnmodningAlleTreeNode.java:29)\n at dk.capgemini.bookline.client.gui.explorer.AnmodningAlleTreeNode$1.actionPerformed(AnmodningAlleTreeNode.java:77)\n at javax.swing.AbstractButton.fireActionPerformed(Unknown Source)\n at javax.swing.AbstractButton$Handler.actionPerformed(Unknown Source)\n at javax.swing.DefaultButtonModel.fireActionPerformed(Unknown Source)\n at javax.swing.DefaultButtonModel.setPressed(Unknown Source)\n at javax.swing.AbstractButton.doClick(Unknown Source)\n at javax.swing.plaf.basic.BasicMenuItemUI.doClick(Unknown Source)\n at javax.swing.plaf.basic.BasicMenuItemUI$Handler.mouseReleased(Unknown Source)\n at java.awt.Component.processMouseEvent(Unknown Source)\n at javax.swing.JComponent.processMouseEvent(Unknown Source)\n at java.awt.Component.processEvent(Unknown Source)\n at java.awt.Container.processEvent(Unknown Source)\n at java.awt.Component.dispatchEventImpl(Unknown Source)\n at java.awt.Container.dispatchEventImpl(Unknown Source)\n at java.awt.Component.dispatchEvent(Unknown Source)\n at java.awt.LightweightDispatcher.retargetMouseEvent(Unknown Source)\n at java.awt.LightweightDispatcher.processMouseEvent(Unknown Source)\n at java.awt.LightweightDispatcher.dispatchEvent(Unknown Source)\n at java.awt.Container.dispatchEventImpl(Unknown Source)\n at java.awt.Window.dispatchEventImpl(Unknown Source)\n at java.awt.Component.dispatchEvent(Unknown Source)\n at java.awt.EventQueue.dispatchEventImpl(Unknown Source)\n at java.awt.EventQueue.access$200(Unknown Source)\n at java.awt.EventQueue$3.run(Unknown Source)\n at java.awt.EventQueue$3.run(Unknown Source)\n at java.security.AccessController.doPrivileged(Native Method)\n at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)\n at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)\n at java.awt.EventQueue$4.run(Unknown Source)\n at java.awt.EventQueue$4.run(Unknown Source)\n at java.security.AccessController.doPrivileged(Native Method)\n at java.security.ProtectionDomain$1.doIntersectionPrivilege(Unknown Source)\n at java.awt.EventQueue.dispatchEvent(Unknown Source)\n at dk.capgemini.bookline.client.gui.waitcursor.WaitCursorEventQueue.dispatchEvent(WaitCursorEventQueue.java:30)\n at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)\n at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)\n at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)\n at java.awt.EventDispatchThread.pumpEvents(Unknown Source)\n at java.awt.EventDispatchThread.pumpEvents(Unknown Source)\n at java.awt.EventDispatchThread.run(Unknown Source)\n "
             }
           ]
         },
@@ -102,10 +119,12 @@
           "buildNr": 9,
           "steps": [
             {
+              "stepNr": 1,
               "stepName": "Build/Unittest",
               "status": "success"
             },
             {
+              "stepNr": 2,
               "stepName": "Integrationtest",
               "status": "notAccepted"
             }
@@ -115,10 +134,12 @@
           "buildNr": 10,
           "steps": [
             {
+              "stepNr": 1,
               "stepName": "Build/Unittest",
               "status": "success"
             },
             {
+              "stepNr": 2,
               "stepName": "Integrationtest",
               "status": "active"
             }
@@ -133,21 +154,39 @@
           "buildNr": 1,
           "steps": [
             {
+              "stepNr": 1,
               "stepName": "Build/Unittest"
             },
             {
+              "stepNr": 2,
               "stepName": "Integrationtest"
             },
             {
+              "stepNr": 3,
               "stepName": "End to end"
             },
             {
+              "stepNr": 4,
               "stepName": "Performance test"
             },
             {
-              "stepName": "Manual exploratory testing"
+              "stepNr": 5,
+              "stepName": "Manual testing"
             },
             {
+              "stepNr": 6,
+              "stepName": "Green/Blue deploy"
+            },
+            {
+              "stepNr": 7,
+              "stepName": "Deployment test"
+            },
+            {
+              "stepNr": 8,
+              "stepName": "Green/Blue flip"
+            },
+            {
+              "stepNr": 9,
               "stepName": "Release"
             }
           ]

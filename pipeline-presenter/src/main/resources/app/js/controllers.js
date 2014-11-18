@@ -60,7 +60,19 @@ $scope.slide = true;
         return $.grep($scope.pipelines, function(pipeline){ return pipeline.name === name; })[0];
     };
 
-    $scope.moinz = 'MOINZ FROM ANGULAR!!!';
+    $scope.additionalInfo = function(buildIndex){
+        if($scope.currentStep[buildIndex]){
+            return $scope.currentStep[buildIndex].stacktrace;
+        } else {
+            return "";
+        }
+    };
+    $scope.currentStep = {}
+    $scope.setCurrentStep = function(buildNr, stepNr){
+        $scope.currentStep[buildNr] = $scope.currentPipeline.pipelineBuilds[buildNr-1].steps[stepNr-1]
+    };
+
+
     $scope.emits = [];
     $scope.emitted = [];
 
