@@ -67,7 +67,7 @@ $scope.slide = true;
             return "";
         }
     };
-    $scope.currentStep = {}
+    $scope.currentStep = {};
     $scope.setCurrentStep = function(buildNr, stepNr){
         $scope.currentStep[buildNr] = $scope.currentPipeline.pipelineBuilds[buildNr-1].steps[stepNr-1]
     };

@@ -35,3 +35,13 @@
 .bs-callout-info {
     border-left-color: #5bc0de;
 }
+
+h4.stepStatusIcons {
+    margin-left: 10px;
+    margin-bottom: 5px;
+}
+
+h4.stepStatusIcons i:hover {
+    color: #ffffff;
+    background: #000000;
+}
