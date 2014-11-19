@@ -45,12 +45,12 @@
 
 
 <div ng-show="!isTabSelected(config)" class="pipelines container">
-    <div class="pipeline-run row panel-group"
+    <div class="pipeline-run row panel-group bs-callout bs-callout-info"
          ng-repeat="build in currentPipeline.pipelineBuilds | orderBy:'buildNr':true"
          style="">
         <div class="col-md-1">
             <div class="panel panel-default">
-                <div class="panel-heading">{{build.buildNr}}</div>
+                <div class="panel-heading">#{{build.buildNr}}</div>
             </div>
         </div>
         <div class="scroller scroller-left"><i class="glyphicon glyphicon-chevron-left"></i></div>
@@ -84,13 +84,13 @@
         <div id="additionalInfoPanel-build{{build.buildNr}}" class="panel-collapse collapse col-md-12" role="tabpanel"
              aria-labelledby="headingTwo">
             <div class="panel-heading">
-                <div align="right">
+                <!--<div align="right">-->
                     <i class="glyphicon glyphicon-align-justify"></i>
                     <i class="glyphicon glyphicon-check"></i>
-                </div>
+                <!--</div>-->
             </div>
             <div class="panel-body">
-                {{additionalInfo(build.buildNr)}}
+                <div class="well">{{additionalInfo(build.buildNr)}}</div>
             </div>
         </div>
     </div>
