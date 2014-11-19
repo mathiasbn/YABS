@@ -3,7 +3,7 @@
 }
 
 .pipelines {
-    padding-top: 70px;
+    padding-top: 50px;
 }
 
 .scroller {
@@ -34,6 +34,15 @@
 
 .bs-callout-info {
     border-left-color: #5bc0de;
+}
+.bs-callout-warning {
+    border-left-color: #f0ad4e;
+}
+.bs-callout-danger {
+    border-left-color: #d9534f;
+}
+.bs-callout-success {
+    border-left-color: #5cb85c;
 }
 
 h4.stepStatusIcons {

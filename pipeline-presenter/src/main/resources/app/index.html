@@ -45,7 +45,8 @@
 
 
 <div ng-show="!isTabSelected(config)" class="pipelines container">
-    <div class="pipeline-run row panel-group bs-callout bs-callout-info"
+    <div class="pipeline-run row panel-group bs-callout"
+         ng-class="{'bs-callout-success':isPipelineRunSuccess(build), 'bs-callout-warning':isPipelineRunNotAccepted(build), 'bs-callout-danger':isPipelineRunFailed(build), 'bs-callout-info':isPipelineRunActive(build), 'bs-callout-default':isPipelineRunPending(build)}"
          ng-repeat="build in currentPipeline.pipelineBuilds | orderBy:'buildNr':true"
          style="">
         <div class="col-md-1">
@@ -58,7 +59,7 @@
         <ul class="steps">
             <li ng-repeat="step in build.steps" class="col-md-2">
                 <div class="panel"
-                     ng-class="{'panel-success':isSuccess(step), 'panel-warning':isNotAccepted(step), 'panel-danger':isFailed(step), 'panel-info':isActive(step), 'panel-default':isPending(step)}">
+                     ng-class="{'panel-success':isStepSuccess(step), 'panel-warning':isStepNotAccepted(step), 'panel-danger':isStepFailed(step), 'panel-info':isStepActive(step), 'panel-default':isStepPending(step)}">
                     <div class="panel-heading">
                         <a class="collapsed" data-toggle="collapse"
                            href="#additionalInfoPanel-build{{build.buildNr}}"

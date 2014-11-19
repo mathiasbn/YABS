@@ -36,23 +36,45 @@ $scope.slide = true;
         return $scope.tab === name;
     };
 
-    $scope.isSuccess = function(step){
+    $scope.isPipelineRunSuccess = function(build){
+        return $scope.isStepSuccess(build.steps[build.steps.length-1])
+    };
+
+    $scope.isPipelineRunNotAccepted = function(build){
+        return $.grep(build.steps, function(step){ return $scope.isStepNotAccepted(step); }).length>0;
+
+    };
+
+    $scope.isPipelineRunFailed = function(build){
+        return $.grep(build.steps, function(step){ return $scope.isStepFailed(step);}).length>0;
+    };
+
+    $scope.isPipelineRunActive = function(build){
+    return $.grep(build.steps, function(step){ return $scope.isStepActive(step);}).length>0;
+    };
+
+    $scope.isPipelineRunPending = function(build){
+        return !$scope.isPipelineRunSuccess(build) && !$scope.isPipelineRunActive(build) &&
+        !$scope.isPipelineRunFailed(build) && !$scope.isPipelineRunNotAccepted(build);
+    };
+
+    $scope.isStepSuccess = function(step){
         return step.status === 'success';
     };
 
-    $scope.isNotAccepted = function(step){
+    $scope.isStepNotAccepted = function(step){
         return step.status === 'notAccepted';
     };
 
-    $scope.isFailed = function(step){
+    $scope.isStepFailed = function(step){
         return step.status === 'failed';
     };
 
-    $scope.isActive = function(step){
+    $scope.isStepActive = function(step){
         return step.status === 'active';
     };
 
-    $scope.isPending = function(step){
+    $scope.isStepPending = function(step){
         return step.status == null;
     };
 
