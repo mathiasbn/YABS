@@ -49,7 +49,7 @@
             {
               "stepNr": 1,
               "stepName": "Build/Unittest",
-              "status": "success"
+              "status": "active"
             },
             {
               "stepNr": 2,
@@ -62,7 +62,8 @@
           "steps": [
             {
               "stepNr": 1,
-              "stepName": "Build/Unittest"
+              "stepName": "Build/Unittest",
+              "status":"notAccepted"
             },
             {
               "stepNr": 2,
@@ -76,12 +77,11 @@
             {
               "stepNr": 1,
               "stepName": "Build/Unittest",
-              "status": "success"
+              "status": "failed"
             },
             {
               "stepNr": 2,
-              "stepName": "Integrationtest",
-              "status": "failed"
+              "stepName": "Integrationtest"
             }
           ]
         },
@@ -95,7 +95,8 @@
             },
             {
               "stepNr": 2,
-              "stepName": "Integrationtest"
+              "stepName": "Integrationtest",
+              "status": "success"
             }
           ]
         },
