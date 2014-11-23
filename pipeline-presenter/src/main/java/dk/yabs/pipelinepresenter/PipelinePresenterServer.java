@@ -1,5 +1,6 @@
 package dk.yabs.pipelinepresenter;
 
+import dk.yabs.EventReceiver;
 import org.eclipse.jetty.server.Handler;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.server.handler.DefaultHandler;

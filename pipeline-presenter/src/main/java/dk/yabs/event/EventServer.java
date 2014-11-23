@@ -5,8 +5,9 @@ import com.corundumstudio.socketio.Configuration;
 import com.corundumstudio.socketio.SocketIOClient;
 import com.corundumstudio.socketio.SocketIOServer;
 import com.corundumstudio.socketio.listener.DataListener;
+import dk.yabs.EventReceiver;
 
-public class EventServer {
+public class EventServer implements EventReceiver {
     public static void main(String[] args) throws InterruptedException {
         new EventServer().start();
     }

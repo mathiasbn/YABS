@@ -1,6 +1,5 @@
 dependencies {
     compile project(':pipeline-presenter')
-    compile project(':socketio_eventserver')
     compile project(':orchestrator')
 
     testCompile 'junit:junit:4.11'

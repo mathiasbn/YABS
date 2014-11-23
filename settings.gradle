@@ -1,1 +1,1 @@
-include 'main','buildserver','pipeline-presenter','socketio_eventserver','pipeline-dsl', 'orchestrator'
+include 'main','buildserver','pipeline-presenter','pipeline-dsl', 'orchestrator'

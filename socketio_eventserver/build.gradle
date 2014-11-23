@@ -1,3 +1,0 @@
-dependencies {
-    compile 'com.corundumstudio.socketio:netty-socketio:1.7.3'
-}
