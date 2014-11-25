@@ -2,6 +2,7 @@ package org.pipeline.model
 
 import org.pipeline.model.exception.CyclicStageDependencyException
 import org.pipeline.model.exception.StageAlreadyDefinedException
+import spock.lang.Ignore
 import spock.lang.Specification
 
 import static org.pipeline.model.TestUtil.buildModel
@@ -19,6 +20,7 @@ class ModelBuilderTest extends Specification {
     }
 
     //see TaskDefinitionScriptTransformer.java
+    @Ignore
     def "unknown blocks results in errors"() {
         def pipeline = {
             invalidBlock() {

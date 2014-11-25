@@ -19,13 +19,13 @@ $scope.slide = true;
         $scope.emitted.push(emitted);
     };
 
-    $http.get('testdata/pipelines.json').success(function(data) {
-        $scope.pipelines = data.pipelines;
-        if(data.pipelines.length > 0){
-            $scope.currentPipeline = data.pipelines[0];
-            $scope.tab = data.pipelines[0].name;
-        }
-    });
+//    $http.get('testdata/pipelines.json').success(function(data) {
+//        $scope.pipelines = data.pipelines;
+//        if(data.pipelines.length > 0){
+//            $scope.currentPipeline = data.pipelines[0];
+//            $scope.tab = data.pipelines[0].name;
+//        }
+//    });
 
     $scope.setTab = function(name){
         $scope.tab = name;
