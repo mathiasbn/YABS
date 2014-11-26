@@ -9,6 +9,11 @@ class RemoteEventEmitterServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        println "moinz"
+    }
 
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        resp.writer << "MOINZ! You should probably use post"
     }
 }
