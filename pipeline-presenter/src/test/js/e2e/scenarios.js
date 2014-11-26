@@ -28,22 +28,37 @@ describe('Pipeline App', function () {
                 jar: jar
             });
 
-            function post(params) {
-                var defer = protractor.promise.defer();
-                console.log("Calling");
-                var url = 'http://localhost:8015/emit';
-                req.post(url, params, function (error, message) {
-                    console.log("Done call emit to: " + url);
-                    if (error || message.statusCode >= 400) {
-                        defer.reject({
-                            error: error,
-                            message: message
-                        });
-                    } else {
-                        defer.fulfill(message);
+            function post(json) {
+                var options = {
+                    uri: 'http://localhost:8015/emit',
+                    method: 'POST',
+                    json: json
+                };
+
+                request(options, function (error, response, body) {
+                    if (!error && response.statusCode == 200) {
+                        console.log(body.id); // Print the shortened url.
                     }
                 });
-                return defer.promise;
+
+
+
+
+//                var defer = protractor.promise.defer();
+//                console.log("Calling");
+//                var url = 'http://localhost:8015/emit';
+//                req.post(url, params, function (error, message) {
+//                    console.log("Done call emit to: " + url);
+//                    if (error || message.statusCode >= 400) {
+//                        defer.reject({
+//                            error: error,
+//                            message: message
+//                        });
+//                    } else {
+//                        defer.fulfill(message);
+//                    }
+//                });
+//                return defer.promise;
             }
 
             function emitPipeline() {
