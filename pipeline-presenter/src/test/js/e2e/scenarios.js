@@ -63,7 +63,7 @@ describe('Pipeline App', function () {
 
             function emitPipeline() {
                 return post({
-                    pipelines: {
+                    pipelineCreated : {
                         name: "singlePipeline"
                     }
                 });

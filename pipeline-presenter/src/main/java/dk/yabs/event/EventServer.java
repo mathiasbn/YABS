@@ -26,4 +26,9 @@ public class EventServer implements EventReceiver {
         });
         server.start();
     }
+
+    @Override
+    public void create() {
+
+    }
 }

@@ -27,7 +27,7 @@ public class RemoteEventEmitter {
         context.setContextPath("/");
         server.setHandler(context);
 
-        context.addServlet(new ServletHolder(new RemoteEventEmitterServlet()),"/emit/*");
+        context.addServlet(new ServletHolder(new RemoteEventEmitterServlet(receiver)),"/emit/*");
 
         server.start();
     }
