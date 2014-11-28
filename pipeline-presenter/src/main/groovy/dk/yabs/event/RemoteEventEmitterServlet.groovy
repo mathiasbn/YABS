@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServlet
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
 
-class RemoteEventEmitterServlet extends HttpServlet{
+class RemoteEventEmitterServlet extends HttpServlet {
 
     private EventReceiver receiver
 
@@ -18,9 +18,12 @@ class RemoteEventEmitterServlet extends HttpServlet{
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        def json = new JsonSlurper().parseText(req.inputStream.text)
-        if (json.createPipeline)
-        println "moinz"
+        def eventMsg = req.inputStream.text
+        def json = new JsonSlurper().parseText(eventMsg)
+        if (json.pipelineCreated)
+            receiver.create(json.pipelineCreated)
+        else
+            throw new RuntimeException()
     }
 
     @Override

@@ -42,8 +42,6 @@ describe('Pipeline App', function () {
                 });
 
 
-
-
 //                var defer = protractor.promise.defer();
 //                console.log("Calling");
 //                var url = 'http://localhost:8015/emit';
@@ -63,7 +61,7 @@ describe('Pipeline App', function () {
 
             function emitPipeline() {
                 return post({
-                    pipelineCreated : {
+                    pipelineCreated: {
                         name: "singlePipeline"
                     }
                 });
@@ -73,10 +71,9 @@ describe('Pipeline App', function () {
             flow.execute(emitPipeline);
         });
 
-        it('should contain no pipelines to select', function () {
+        it('should contain a single pipeline', function () {
             var pipelineMenus = element.all(by.repeater('pipeline in pipelines'));
             expect(pipelineMenus.count()).toEqual(1);
         });
-
     });
 });

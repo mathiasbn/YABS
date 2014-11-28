@@ -8,6 +8,9 @@ import com.corundumstudio.socketio.listener.DataListener;
 import dk.yabs.EventReceiver;
 
 public class EventServer implements EventReceiver {
+
+    private SocketIOServer server;
+
     public static void main(String[] args) throws InterruptedException {
         new EventServer().start();
     }
@@ -17,7 +20,7 @@ public class EventServer implements EventReceiver {
         config.setHostname("localhost");
         config.setPort(9092);
 
-        final SocketIOServer server = new SocketIOServer(config);
+        server = new SocketIOServer(config);
         server.addEventListener("buildevent", String.class, new DataListener<String>() {
             @Override
             public void onData(SocketIOClient client, String data, AckRequest ackSender) throws Exception {
@@ -28,7 +31,8 @@ public class EventServer implements EventReceiver {
     }
 
     @Override
-    public void create() {
-
+    public void create(String json) {
+        System.out.println("creating pipline: " + json);
+        server.getBroadcastOperations().sendEvent("pipelineCreated",json);
     }
 }
