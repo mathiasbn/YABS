@@ -2,7 +2,7 @@
 <head>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="css/main.css"/>
-    <script src="bower_components/jquery/jquery.min.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
     <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/socket.io-client/socket.io.js"></script>
@@ -36,6 +36,9 @@
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <button ng-click="emitFunction()">Emit</button>
+                </li>
                 <li ng-class="{active:isTabSelected(config)}">
                     <a href="#" ng-click="setTab(config)">Configuration</a></li>
             </ul>
@@ -94,14 +97,5 @@
     </div>
 </div>
 
-<table>
-    <tr>
-        <td ng-repeat="emit in emitted">{{emit}}</td>
-    </tr>
-    <tr>
-        <td ng-repeat="emit2 in emits">{{emit2}}</td>
-    </tr>
-</table>
-<button ng-click="emitFunction()">Emit</button>
 </body>
 </html>

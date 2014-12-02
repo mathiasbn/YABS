@@ -10,17 +10,24 @@ app.factory('mySocket', function (socketFactory) {
 
 app.controller("MainController", ['$scope', 'mySocket', '$http', function ($scope, mySocket, $http) {
     $scope.slide = true;
+    $scope.pipelines = [];
     mySocket.on('buildevent', function (msg) {
         $scope.emits.push('Recieve' + $scope.emits.length + ': ' + msg);
     });
     mySocket.on('pipelineCreated', function (json) {
-        $scope.pipelines.push(json);
+        $scope.pipelines.push(eval("("+json+")"));
     });
     $scope.emitFunction = function () {
-        var emitted = 'Emit' + $scope.emitted.length
-        mySocket.emit('buildevent', emitted);
+        var emitted = '{"name": "singlePipeline"}';
+        mySocket.emit('pipelineCreated', emitted);
         $scope.emitted.push(emitted);
     };
+
+    $scope.createPipelineFunction = function () {
+//        var emitted = ;
+        mySocket.emit('pipelineCreated', emitted);
+        $scope.emitted.push(emitted);
+    }
 
 //    $http.get('testdata/pipelines.json').success(function(data) {
 //        $scope.pipelines = data.pipelines;

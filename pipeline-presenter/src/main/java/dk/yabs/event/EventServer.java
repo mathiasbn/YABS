@@ -27,6 +27,12 @@ public class EventServer implements EventReceiver {
                 server.getBroadcastOperations().sendEvent("buildevent", data);
             }
         });
+        server.addEventListener("pipelineCreated", String.class, new DataListener<String>() {
+            @Override
+            public void onData(SocketIOClient client, String data, AckRequest ackSender) throws Exception {
+                server.getBroadcastOperations().sendEvent("pipelineCreated", data);
+            }
+        });
         server.start();
     }
 
