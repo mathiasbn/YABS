@@ -30,8 +30,8 @@ describe('Pipeline App', function () {
 
             function post(json) {
                 var options = {
-                    uri: 'http://localhost:8015/emit',
-                    method: 'POST',
+//                    uri: 'http://localhost:8015/emit',
+//                    method: 'POST',
                     json: json
                 };
 //
@@ -48,6 +48,8 @@ describe('Pipeline App', function () {
                 req.post(url, options, function (error, message) {
                     console.log("Done call emit to: " + url);
                     if (error || message.statusCode >= 400) {
+                        console.log(message);
+                        console.log("msg: " + message + " error: " + error + " statusCode: " + message.statusCode);
                         defer.reject({
                             error: error,
                             message: message

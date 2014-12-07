@@ -21,4 +21,4 @@ node {
 
 processResources.dependsOn('npmInstall')
 test.dependsOn('npm_run_protractor')
-test.dependsOn('npm_run_testsingle')
+//test.dependsOn('npm_run_testsingle')

@@ -30,6 +30,7 @@ public class EventServer implements EventReceiver {
         server.addEventListener("pipelineCreated", String.class, new DataListener<String>() {
             @Override
             public void onData(SocketIOClient client, String data, AckRequest ackSender) throws Exception {
+                System.out.println("Sending pipelineCreated event");
                 server.getBroadcastOperations().sendEvent("pipelineCreated", data);
             }
         });
@@ -39,6 +40,6 @@ public class EventServer implements EventReceiver {
     @Override
     public void create(String json) {
         System.out.println("creating pipline: " + json);
-        server.getBroadcastOperations().sendEvent("pipelineCreated",json);
+        server.getBroadcastOperations().sendEvent("pipelineCreated", json);
     }
 }
