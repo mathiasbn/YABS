@@ -30,17 +30,8 @@ describe('Pipeline App', function () {
 
             function post(json) {
                 var options = {
-//                    uri: 'http://localhost:8015/emit',
-//                    method: 'POST',
                     json: json
                 };
-//
-//                request(options, function (error, response, body) {
-//                    if (!error && response.statusCode == 200) {
-//                        console.log(body.id); // Print the shortened url.
-//                    }
-//                });
-
 
                 var defer = protractor.promise.defer();
                 console.log("Calling");
@@ -74,7 +65,7 @@ describe('Pipeline App', function () {
         });
 
         it('should contain a single pipeline', function () {
-            var pipelineMenus = element.all(by.repeater('pipeline in pipelines'));
+            var pipelineMenus = element.all(by.css('.pipeline-menu'));
             expect(pipelineMenus.count()).toEqual(1);
         });
     });

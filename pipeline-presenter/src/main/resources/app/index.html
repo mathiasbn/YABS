@@ -24,7 +24,7 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li ng-class="{active:isTabSelected(pipeline.name)}" ng-repeat="pipeline in pipelines">
+                <li class="pipeline-menu" ng-class="{active:isTabSelected(pipeline.name)}" ng-repeat="pipeline in pipelines">
                     <a href="#" ng-click="setTab(pipeline.name)">{{pipeline.name}}<span class="badge">42</span></a></li>
 
                 <li class="dropdown">
